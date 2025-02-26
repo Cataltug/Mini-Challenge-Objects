@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Challenge</title>
+</head>
+<body>
+    <h1>Object Challenge</h1>
+    <script>
+        const person = { name: "John", age: 30, country: "USA" };
+        console.log(person.name, person.age); //    challenge: 1
+        person["city"] = "Houston";//   challenge: 2
+        console.log(person.city);
+        console.log(person);//  challenge: 2
+        person.age = 27; // challenge: 3
+        console.log(person);
+
+        const {name, country} = person; //  challenge: 5
+        console.log(name, country);
+
+        delete person.country; //   challenge: 4
+        console.log(person);
+
+        const keys = Object.keys(person); //    challenge: 6
+        console.log(keys); 
+
+        const values = Object.values(person);// challenge: 6
+        console.log(values); 
+
+        {// challenge: 7
+            const person = { name: "John", age: 30 };
+            const address = { city: "Houston", country: "USA" };
+
+            const merged = { ...person, ...address};
+            console.log(merged);
+        }
+
+        {// challenge: 8
+            const user = { name: "John", address: { city: "Houston", country: "USA" } };
+            console.log(user.address.city);
+        }
+
+        {// challenge: 9
+            const person = { name: "John", age: 30, country: "USA" };
+            for(let key in person){
+                console.log(`${key}: ${person[key]}`);
+            }
+
+        }
+
+        {
+            const person = { name: "John", age: 30, country: "USA" };
+            if("city" in person){
+                console.log(`City: ${person.city}`);
+            }else{
+                console.log("City not found");
+            }
+        }
+
+    </script>
+    
+</body>
+</html>
